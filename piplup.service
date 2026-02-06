@@ -1,0 +1,14 @@
+[Unit]
+Description=Piplup
+After=network.target
+
+[Service]
+User=vitor
+Group=vitor
+WorkingDirectory=/home/vitor/Code/piplup
+ExecStart=uv run piplup
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
