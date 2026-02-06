@@ -1,6 +1,12 @@
 # Piplup
 
-Simple API that receives an image via POST request and save it to $HOME/Images/
+**CAUTION: It not recommended to keep this service open to the web. Use something like Tailscale or keep it local only!** 
+
+Simple API that:
+
+- receives an image via POST request and save it to $HOME/Images/;
+- receives a text via POST request and save it to your clipboard;
+- receives a GET request and share the host clipboard as a response;
 
 ## Requirements
 
