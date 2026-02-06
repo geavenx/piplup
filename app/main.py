@@ -7,7 +7,7 @@ app = FastAPI()
 
 
 def cli():
-    uvicorn.run("app.main:app", host="100.69.243.42", port=6969, reload=True)
+    uvicorn.run("app.main:app", host="0.0.0.0", port=6969, reload=True)
 
 
 IMAGES_DIR = Path.home() / "Images"
