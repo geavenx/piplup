@@ -2,6 +2,12 @@
 
 Simple API that receives an image via POST request and save it to $HOME/Images/
 
+## Requirements
+
+Just use `uv`, do a favor for yourself;
+
+- [`uv`](https://docs.astral.sh/uv/)
+
 ## Installation
 
 1. Install dependencies
@@ -16,7 +22,17 @@ uv sync
 uv run piplup
 ```
 
-3. Add service to systemd
+3. Fill .env file
+
+```bash
+cp .env.example .env
+export SECRET=$(python -c 'import secrets;print(secrets.token_hex(32))')
+sed -i "s/\[Your generated secret token\]/$SECRET/g" .b
+echo "Your secret is: $SECRET"
+echo "\nThe expected authorization header is:\n'Authorization': 'Beaerer $SECRET'"
+```
+
+4. Add service to systemd
 
 ```bash
 mkdir -p ~/.config/systemd/user
@@ -24,10 +40,27 @@ cp ./piplup.service ~/.config/systemd/user/piplup.service
 sed -i "s/USER/$USER/g; s|/path/to/piplup|$PWD|g" ~/.config/systemd/user/piplup.service
 ```
 
-4. Enable and start service
+5. Start service
 
 ```bash
+systemctl --user start piplup.service
+
+# Or enable it for auto-run on system startup
 systemctl --user enable --now piplup.service
 ```
 
-Submit your images to http://api_ip:6969/upload
+- **The default host:port is: `0.0.0.0:6969`**
+
+## Example IOS shortcuts integration
+
+- **Send image to PC**:
+
+![Send image to pc shortcut](static/send_image_to_pc.png)
+
+- **Send clipboard to PC**:
+
+![Send clipboard to pc shortcut](static/send_clipboard_to_pc.png)
+
+- **Get clipboard from PC**:
+
+![Get clipboard from pc shortcut](static/get_clipboard_from_pc.png)
