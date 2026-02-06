@@ -1,7 +1,7 @@
 [project]
 name = "piplup"
 version = "0.1.0"
-description = "Add your description here"
+description = "Shared clipboard between IOS and Linux using Shortcuts and FastAPI"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
