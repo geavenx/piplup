@@ -19,7 +19,8 @@ HOST = os.environ.get("PIPLUP_HOST", "0.0.0.0")
 PORT = os.environ.get("PIPLUP_PORT", "6969")
 
 @app.post("/upload")
-async def upload_image(file: UploadFile):
+async def upload_image(file: UploadFile, authorization: Optional[str] = Header(default=None)):
+    require_auth(authorization)
     if not file.content_type or not file.content_type.startswith("image/"):
         raise HTTPException(status_code=400, detail="File must be an image")
 
