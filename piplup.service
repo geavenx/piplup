@@ -3,9 +3,9 @@ Description=Piplup
 After=network.target
 
 [Service]
-User=vitor
-Group=vitor
-WorkingDirectory=/home/vitor/Code/piplup
+User=USER
+Group=USER
+WorkingDirectory=/path/to/piplup
 ExecStart=uv run piplup
 Restart=always
 RestartSec=3
