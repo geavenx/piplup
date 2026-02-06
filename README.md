@@ -61,12 +61,12 @@ systemctl --user enable --now piplup.service
 
 - **Send image to PC**:
 
-![Send image to pc shortcut](static/send_image_to_pc.png)
+![Send image to pc shortcut](docs/send_image_to_pc.png)
 
 - **Send clipboard to PC**:
 
-![Send clipboard to pc shortcut](static/send_clipboard_to_pc.png)
+![Send clipboard to pc shortcut](docs/send_clipboard_to_pc.png)
 
 - **Get clipboard from PC**:
 
-![Get clipboard from pc shortcut](static/get_clipboard_from_pc.png)
+![Get clipboard from pc shortcut](docs/get_clipboard_from_pc.png)
