@@ -33,7 +33,7 @@ uv run piplup
 ```bash
 cp .env.example .env
 export SECRET=$(python -c 'import secrets;print(secrets.token_hex(32))')
-sed -i "s/\[Your generated secret token\]/$SECRET/g" .b
+sed -i "s/\[Your generated secret token\]/$SECRET/g" .env
 echo "Your secret is: $SECRET"
 echo "\nThe expected authorization header is:\n'Authorization': 'Beaerer $SECRET'"
 ```
